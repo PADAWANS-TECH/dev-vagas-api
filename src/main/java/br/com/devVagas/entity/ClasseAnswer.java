@@ -25,7 +25,7 @@ import lombok.Setter;
 public class ClasseAnswer {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private long id;
 	
@@ -41,14 +41,14 @@ public class ClasseAnswer {
 	@Column(name = "DT_EXCLUSAO")
 	private Date excluysionDate;
 	
-	@Column(name = "ID_ANALISTA_ATUALIZACAO")
-	private Analyst updateAnalysts;
+	//@Column(name = "ID_ANALISTA_ATUALIZACAO")
+	//private Analyst updateAnalysts;
 	
-	@Column(name = "ID_ANALISTA_CRIACAO")
-	private Analyst createAnalysts;
+	//@Column(name = "ID_ANALISTA_CRIACAO")
+	//private Analyst createAnalysts;
 	
-	@Column(name = "ID_ANALISTA_EXCLUSAO")
-	private Analyst exclusionAnalysts;
+	//@Column(name = "ID_ANALISTA_EXCLUSAO")
+	//private Analyst exclusionAnalysts;
 	
 
 }

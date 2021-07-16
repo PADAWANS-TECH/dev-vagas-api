@@ -41,13 +41,13 @@ public class TypeQuestion {
 	@Column(name = "DT_EXCLUSAO")
 	private Date excluysionDate;
 	
-	@Column(name = "ID_ANALISTA_ATUALIZACAO")
-	private Analyst updateAnalysts;
+	//@Column(name = "ID_ANALISTA_ATUALIZACAO")
+	//private Analyst updateAnalysts;
 	
-	@Column(name = "ID_ANALISTA_CRIACAO")
-	private Analyst createAnalysts;
+	//@Column(name = "ID_ANALISTA_CRIACAO")
+	//private Analyst createAnalysts;
 	
-	@Column(name = "ID_ANALISTA_EXCLUSAO")
-	private Analyst exclusionAnalysts;	
+	//@Column(name = "ID_ANALISTA_EXCLUSAO")
+	//private Analyst exclusionAnalysts;	
 	
 }
