@@ -17,21 +17,14 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "TB_ANALISTA")
-public class Analyst {
-
+@Table(name = "TB_TIPO_QUESTIONARIO")
+public class TypeQuiz {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
 	
-	@Column(name = "NOME", nullable = false)
-	private String name;
-	
-	@Column(name = "EMAIL", nullable = false)
-	private String email;
-	
-	@Column(name = "TELEFONE", nullable = false)
-	private String telephone;
-	
+	@Column(name = "TITULO", nullable = false)
+	private String title;
 }

@@ -5,15 +5,17 @@ import javax.persistence.*;
 import java.util.List;
 
 
-@NoArgsConstructor @AllArgsConstructor
-@Getter @Setter
+@NoArgsConstructor 
+@AllArgsConstructor
+@Getter 
+@Setter
 @ToString(exclude="id")
 @Entity
 @Table(name="TB_ENDERECO")
 public class Address {
 	
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
-    @Column(name="ID" , nullable = false)
+    @Column(name="ID")
     private Long id;
     
     @Column(name="LOGRADOURO", nullable = false)
