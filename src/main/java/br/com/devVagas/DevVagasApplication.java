@@ -1,4 +1,4 @@
-package br.com.devVagas.devVagas;
+package br.com.devVagas;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
