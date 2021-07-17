@@ -25,13 +25,13 @@ public class Analyst {
 	@Column(name = "ID")
 	private Long id;
 	
-	@Column(name = "NOME")
+	@Column(name = "NOME", nullable = false)
 	private String name;
 	
-	@Column(name = "EMAIL")
+	@Column(name = "EMAIL", nullable = false)
 	private String email;
 	
-	@Column(name = "TELEFONE")
+	@Column(name = "TELEFONE", nullable = false)
 	private String telephone;
 	
 }

@@ -2,6 +2,8 @@ package br.com.devVagas.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -19,6 +21,8 @@ import lombok.Setter;
 public class TypeQuiz {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "ID")
 	private Long id;
 	
 	@Column(name = "TITULO", nullable = false)
