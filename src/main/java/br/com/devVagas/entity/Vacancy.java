@@ -31,7 +31,7 @@ public class Vacancy {
 	@Column(name = "ID")
 	private Long id;
 	
-	@Column(name = "DS_NOME")
+	@Column(name = "DS_NOME", nullable = false)
 	private String name;
 	
 	//verificar a utilização dessa anotação @CreationTimestamp
@@ -61,9 +61,9 @@ public class Vacancy {
     referencedColumnName = "id")
 	private Analyst exclusionAnalyst;
 	
-	//@ManyToOne
-	//@JoinColumn(name = "ID_EMPRESA", 
-	//	    referencedColumnName = "id")
-	//private Company company;
+//	@ManyToOne
+//	@JoinColumn(name = "ID_EMPRESA", 
+//		    referencedColumnName = "id", nullable = false)
+//	private Company company;
 	
 }
