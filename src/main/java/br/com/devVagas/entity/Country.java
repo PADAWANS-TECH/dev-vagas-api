@@ -22,7 +22,7 @@ import lombok.ToString;
 @ToString
 @Entity
 @Table(name = "TB_PAIS")
-public class Coutry {
+public class Country {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
