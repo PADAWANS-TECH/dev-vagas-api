@@ -105,9 +105,13 @@ public class Applicant {
 	inverseJoinColumns = @JoinColumn(name = "reposta_id"))
 	private List<Answer>answers = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "applicantties",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@OneToMany(mappedBy = "applicant",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinTable(name = "ENDERECO",joinColumns = @JoinColumn(name = "ID"),
 	inverseJoinColumns = @JoinColumn(name = "ID"))
 	private List<Address>address = new ArrayList<>();
+	
+	@OneToMany(mappedBy = "applicant",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	private List<Skill>skills = new ArrayList<>();
+	
 	
 }
