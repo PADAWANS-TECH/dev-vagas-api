@@ -1,14 +1,15 @@
 package br.com.devVagas.entity;
 
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -25,8 +26,8 @@ import lombok.ToString;
 @NoArgsConstructor
 @Entity
 @ToString
-@Table(name = "TB_TIPO_QUESTIONARIO")
-public class TypeQuestion {
+@Table(name = "TB_RESPOSTA")
+public class Answer {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -45,16 +46,16 @@ public class TypeQuestion {
 	@Column(name = "DT_EXCLUSAO")
 	private LocalDateTime excluysionDate;
 	
-	@Column(name = "ID_ANALISTA_ATUALIZACAO")
-	private Analyst updateAnalysts;
+	//@Column(name = "ID_ANALISTA_ATUALIZACAO")
+	//private Analyst updateAnalysts;
 	
-	@Column(name = "ID_ANALISTA_CRIACAO")
-	private Analyst createAnalysts;
+	//@Column(name = "ID_ANALISTA_CRIACAO")
+	//private Analyst createAnalysts;
 	
-	@Column(name = "ID_ANALISTA_EXCLUSAO")
-	private Analyst exclusionAnalysts;	
+	//@Column(name = "ID_ANALISTA_EXCLUSAO")
+	//private Analyst exclusionAnalysts;	
+
+	@ManyToMany(mappedBy = "answers")
+	private List<Applicant>applicants = new ArrayList<>(); 
 	
-	@ManyToOne
-	@JoinColumn(name = "analyst_id")
-	private Analyst analyst;
 }
