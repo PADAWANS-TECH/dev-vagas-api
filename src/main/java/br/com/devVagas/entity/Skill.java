@@ -33,8 +33,8 @@ public class Skill {
     // private Analist exclusionAnalyst
     // private Analist updateAnalyst
     
-    @ManyToOne
-    @JoinColumn(name = "applicant_id")
-    private Applicant applicant;
+    //@ManyToOne
+   // @JoinColumn(name = "applicant_id")
+   // private Applicant applicant;
     
 }

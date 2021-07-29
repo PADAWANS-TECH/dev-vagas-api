@@ -110,8 +110,11 @@ public class Applicant {
 	inverseJoinColumns = @JoinColumn(name = "ID"))
 	private List<Address>address = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "applicant",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	private List<Skill>skills = new ArrayList<>();
+	//@OneToMany(mappedBy = "applicant",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	//private List<Skill>skills = new ArrayList<>();
 	
+	//@JsonIgnore
+	//@ManyToMany(mappedBy = "applicanties",fetch = FetchType.LAZY)
+	//private List<SelectionProcess>selectionProcessies = new ArrayList<>();
 	
 }
