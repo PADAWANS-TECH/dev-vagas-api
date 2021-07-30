@@ -57,12 +57,12 @@ public class SelectionProcess {
     //@ManyToOne
     // private Analyst analyst
     
-    //@ManyToMany
-   // @JoinTable(
-    		//name = "TB_CANDIDATO_PROCESSO_SELETIVO",
-    		//joinColumns = @JoinColumn(name = "selectionProcess_id"),
-    		//inverseJoinColumns = @JoinColumn(name = "applicant_id")
-    		  //)
-    //private List<Applicant> applicanties = new ArrayList<>();
+    @ManyToMany
+    @JoinTable(
+    		name = "TB_CANDIDATO_PROCESSO_SELETIVO",
+    		joinColumns = @JoinColumn(name = "selectionProcess_id"),
+    		inverseJoinColumns = @JoinColumn(name = "applicant_id")
+    		  )
+    private List<Applicant> applicanties = new ArrayList<>();
 }
 

@@ -13,6 +13,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinColumns;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
@@ -85,36 +86,34 @@ public class Applicant {
 	@Column(name = "DT_EXCLUSAO")
 	private Date excluysionDate;
 	
-	@Column(name = "ID_ANALISTA_ATUALIZACAO")
-	private Analyst updateAnalysts;
-		
-	@Column(name = "ID_ANALISTA_CRIACAO")
-	private Analyst createAnalysts;
-		
-	@Column(name = "ID_ANALISTA_EXCLUSAO")
-	private Analyst exclusionAnalysts;
+	@ManyToOne
+	 @JoinColumn(name = "CRIADO", 
+    referencedColumnName = "id")
+	private Analyst createAnalyst;
+	
+	@ManyToOne
+	@JoinColumn(name = "ATUALIZADO", 
+   referencedColumnName = "id")
+	private Analyst modifyAnalyst;
+	
+	
+	@ManyToOne
+	@JoinColumn(name = "EXCLUIDO", 
+   referencedColumnName = "id")
+	private Analyst exclusionAnalyst;
 	
 	@ManyToOne
 	@JoinColumn(name = "analyst_id")
-	private Analyst analyst;
+	private Analyst analyst;	
 	
-	@JsonIgnore
-	@ManyToMany
-	@JoinTable(name = "CANDIDATO_PERGUNTA_RESPOSTA",
-	joinColumns = @JoinColumn(name = "candidato_id"),
-	inverseJoinColumns = @JoinColumn(name = "reposta_id"))
-	private List<Answer>answers = new ArrayList<>();
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "endereco_id",referencedColumnName = "id")
+	private List<Address> address = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "applicant",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinTable(name = "ENDERECO",joinColumns = @JoinColumn(name = "ID"),
-	inverseJoinColumns = @JoinColumn(name = "ID"))
-	private List<Address>address = new ArrayList<>();
+	@OneToMany
+	private List<Skill> skills = new ArrayList<>();	
 	
-	//@OneToMany(mappedBy = "applicant",cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	//private List<Skill>skills = new ArrayList<>();
-	
-	//@JsonIgnore
-	//@ManyToMany(mappedBy = "applicanties",fetch = FetchType.LAZY)
-	//private List<SelectionProcess>selectionProcessies = new ArrayList<>();
+	@ManyToMany(mappedBy = "applicanties",fetch = FetchType.LAZY)
+	private List<SelectionProcess>selectionProcessies = new ArrayList<>();
 	
 }

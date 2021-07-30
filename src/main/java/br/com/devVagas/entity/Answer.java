@@ -48,14 +48,21 @@ public class Answer {
 	@Column(name = "DT_EXCLUSAO")
 	private LocalDateTime excluysionDate;
 	
-	@Column(name = "ID_ANALISTA_ATUALIZACAO")
-	private Analyst updateAnalysts;
+	@ManyToOne
+	 @JoinColumn(name = "CRIADO", 
+    referencedColumnName = "id")
+	private Analyst createAnalyst;
 	
-	@Column(name = "ID_ANALISTA_CRIACAO")
-	private Analyst createAnalysts;
+	@ManyToOne
+	@JoinColumn(name = "ATUALIZADO", 
+   referencedColumnName = "id")
+	private Analyst modifyAnalyst;
 	
-	@Column(name = "ID_ANALISTA_EXCLUSAO")
-	private Analyst exclusionAnalysts;
+	
+	@ManyToOne
+	@JoinColumn(name = "EXCLUIDO", 
+   referencedColumnName = "id")
+	private Analyst exclusionAnalyst;
 	
 	@ManyToOne
 	@JoinColumn(name = "analyst_id")
