@@ -32,4 +32,5 @@ public class Skill {
     // private Analyst createAnalyst
     // private Analist exclusionAnalyst
     // private Analist updateAnalyst
+    
 }
