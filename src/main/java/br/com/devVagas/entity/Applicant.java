@@ -44,25 +44,28 @@ public class Applicant {
 	@Column(name = "ID")
 	private Long id;
 	
-	@Column(name ="NOME")
+	@Column(name ="NOME",nullable = false)
 	private String name;
 	
-	@Column(name ="DT_NASCIMENTO")
+	@Column(name ="TELEFONE",nullable = false)
+	private String telephone;
+	
+	@Column(name ="DT_NASCIMENTO",nullable = false)
 	private LocalDateTime birthday;
 	
 	@Column(name ="SEXO")
 	private String gender;
 	
-	@Column(name ="NACIONALIDADE")
+	@Column(name ="NACIONALIDADE",nullable = false)
 	private String nationality;
 	
-	@Column(name ="ESTADO_CIVIL")
+	@Column(name ="ESTADO_CIVIL",nullable = false)
 	private String maritalstatus;
 	
-	@Column(name ="RG")
+	@Column(name ="RG",nullable = false)
 	private String rg;
 	
-	@Column(name ="CPF")
+	@Column(name ="CPF",nullable = false)
 	private String cpf;
 	
 	@Column(name ="IMAGEM")
@@ -74,7 +77,7 @@ public class Applicant {
 	@Column(name ="PONTUACAO")
 	private Integer score;
 	
-	@Column(name ="EMAIL")
+	@Column(name ="EMAIL",nullable = false)
 	private String email;
 		
 	@Column(name = "DT_ATUALIZACAO")
