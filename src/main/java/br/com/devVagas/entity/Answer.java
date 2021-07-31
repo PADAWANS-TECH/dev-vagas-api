@@ -36,16 +36,16 @@ public class Answer {
 	@Column(name = "ID")
 	private long id;
 	
-	@Column(name = "TITULO")
+	@Column(name = "TITULO", nullable = false)
 	private String title;
 	
-	@Column(name = "DT_ATUALIZACAO")
+	@Column(name = "DT_ATUALIZACAO", nullable = false)
 	private LocalDateTime updateDate;
 	
-	@Column(name = "DT_CRIACAO")
+	@Column(name = "DT_CRIACAO", nullable = false)
 	private LocalDateTime createDate;
 	
-	@Column(name = "DT_EXCLUSAO")
+	@Column(name = "DT_EXCLUSAO", nullable = false)
 	private LocalDateTime excluysionDate;
 	
 	@ManyToOne
