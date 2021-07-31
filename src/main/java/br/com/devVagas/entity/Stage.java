@@ -6,14 +6,15 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name="ETAPA")
+@Table(name="TB_ETAPA")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString(exclude="id")
 public class Stage {
-    @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
+    
+	@Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="ID")
     private Long id;
 
@@ -23,13 +24,13 @@ public class Stage {
     @Column(name= "DESCRICAO" , nullable = false)
     private String description;
 
-    @Column(name= "QUANTIDADE_CANDIDATOS" , nullable = false)
+    @Column(name= "QUANTIDADE_CANDIDATOS", nullable = false)
     private int quantityapplicant;
 
-    @Column(name="DT_INICIO")
+    @Column(name="DT_INICIO", nullable = false)
     private LocalDateTime beginDate;
 
-    @Column(name="DT_FIM")
+    @Column(name="DT_FIM", nullable = false)
     private LocalDateTime endDate;
 
     @Column(name="APROVADOS")
@@ -39,14 +40,17 @@ public class Stage {
     private int failed;
     
     @Column(name="DT_ATUALIZACAO")
-    private LocalDateTime updateDate;
+    private LocalDateTime modifyDate;
     
     @Column(name="DT_CRIACAO")
     private LocalDateTime createDate;
 
     @Column(name="DT_EXCLUSAO")
     private LocalDateTime exclusionDate;
+    
+    //falta adicionar relacionamento para os atributos abaixo
     // private Analyst createAnalyst
     // private Analyst updateAnalyst
     // private Analyst exclusionAnalyst
+    
 }

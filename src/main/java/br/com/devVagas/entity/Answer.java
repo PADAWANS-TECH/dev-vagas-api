@@ -35,40 +35,29 @@ public class Answer {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private long id;
-	
+
 	@Column(name = "TITULO", nullable = false)
 	private String title;
-	
-	@Column(name = "DT_ATUALIZACAO", nullable = false)
-	private LocalDateTime updateDate;
-	
-	@Column(name = "DT_CRIACAO", nullable = false)
-	private LocalDateTime createDate;
-	
-	@Column(name = "DT_EXCLUSAO", nullable = false)
-	private LocalDateTime excluysionDate;
-	
-	@ManyToOne
-	 @JoinColumn(name = "CRIADO", 
-    referencedColumnName = "id")
-	private Analyst createAnalyst;
-	
-	@ManyToOne
-	@JoinColumn(name = "ATUALIZADO", 
-   referencedColumnName = "id")
-	private Analyst modifyAnalyst;
-	
-	
-	@ManyToOne
-	@JoinColumn(name = "EXCLUIDO", 
-   referencedColumnName = "id")
-	private Analyst exclusionAnalyst;
-	
-	@ManyToOne
-	@JoinColumn(name = "analyst_id")
-	private Analyst analyst;
 
-	@ManyToMany(mappedBy = "answers")
-	private List<Applicant>applicants = new ArrayList<>(); 
-	
+	@Column(name = "DT_ATUALIZACAO")
+	private LocalDateTime updateDate;
+
+	@Column(name = "DT_CRIACAO")
+	private LocalDateTime createDate;
+
+	@Column(name = "DT_EXCLUSAO")
+	private LocalDateTime excluysionDate;
+
+	@ManyToOne
+	@JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", referencedColumnName = "id")
+	private Analyst createAnalyst;
+
+	@ManyToOne
+	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", referencedColumnName = "id")
+	private Analyst modifyAnalyst;
+
+	@ManyToOne
+	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", referencedColumnName = "id")
+	private Analyst exclusionAnalyst;
+
 }

@@ -25,7 +25,7 @@ import lombok.ToString;
 @NoArgsConstructor
 @Entity
 @ToString
-@Table(name = "TB_TIPO_QUESTIONARIO")
+@Table(name = "TB_TIPO_PERGUNTA")
 public class TypeQuestion {
 
 	@Id
@@ -36,31 +36,4 @@ public class TypeQuestion {
 	@Column(name = "TITULO", nullable = false)
 	private String title;
 	
-	@Column(name = "DT_ATUALIZACAO")
-	private LocalDateTime updateDate;
-	
-	@Column(name = "DT_CRIACAO")
-	private LocalDateTime createDate;
-	
-	@Column(name = "DT_EXCLUSAO")
-	private LocalDateTime excluysionDate;
-	
-	@ManyToOne
-	 @JoinColumn(name = "CRIADO", 
-    referencedColumnName = "id")
-	private Analyst createAnalyst;
-	
-	@ManyToOne
-	@JoinColumn(name = "ATUALIZADO", 
-   referencedColumnName = "id")
-	private Analyst modifyAnalyst;	
-	
-	@ManyToOne
-	@JoinColumn(name = "EXCLUIDO", 
-   referencedColumnName = "id")
-	private Analyst exclusionAnalyst;	
-	
-	@ManyToOne
-	@JoinColumn(name = "analyst_id")
-	private Analyst analyst;
 }

@@ -90,30 +90,27 @@ public class Applicant {
 	private Date excluysionDate;
 	
 	@ManyToOne
-	 @JoinColumn(name = "CRIADO", 
+	 @JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", 
     referencedColumnName = "id")
 	private Analyst createAnalyst;
 	
 	@ManyToOne
-	@JoinColumn(name = "ATUALIZADO", 
+	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", 
    referencedColumnName = "id")
 	private Analyst modifyAnalyst;
 	
 	
 	@ManyToOne
-	@JoinColumn(name = "EXCLUIDO", 
+	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", 
    referencedColumnName = "id")
 	private Analyst exclusionAnalyst;
-	
-	@ManyToOne
-	@JoinColumn(name = "analyst_id")
-	private Analyst analyst;	
 	
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name = "endereco_id",referencedColumnName = "id")
 	private List<Address> address = new ArrayList<>();
 	
-	@OneToMany
+	@ManyToMany
+	//falta realizar o mapeamento correto
 	private List<Skill> skills = new ArrayList<>();	
 	
 	@ManyToMany(mappedBy = "applicanties",fetch = FetchType.LAZY)

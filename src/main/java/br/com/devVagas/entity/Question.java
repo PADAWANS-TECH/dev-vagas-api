@@ -5,14 +5,16 @@ import lombok.*;
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Entity
-@Table(name="PERGUNTA")
+
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
 @ToString(exclude="id")
+@Entity
+@Table(name="TB_PERGUNTA")
 public class Question {
+	
     @Id @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="ID")
     private Long id;
@@ -30,17 +32,21 @@ public class Question {
     private LocalDateTime createDate;
     
     @Column(name="DT_ATUALIZACAO")
-    private LocalDateTime updateDate;
+    private LocalDateTime modifyDate;
 
     @Column(name="DT_EXCLUSAO")
     private LocalDateTime exclusionDate;
+    
+    //falta adicionar o mapeamento correto dos relacionamentos abaixo {
     // private Analyst createAnalyst
     // private Analyst updateAnalyst
     // private Analyst exclusionAnalyst
+    
     //@ManyToOne
     // private TypeQuestion typequiz
     //@ManyToOne
     // private Quiz question
     //@ManyToOne
     // private Answer answer
+//}
 }

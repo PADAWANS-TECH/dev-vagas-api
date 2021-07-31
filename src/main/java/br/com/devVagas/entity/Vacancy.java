@@ -46,24 +46,23 @@ public class Vacancy {
 	private LocalDateTime exclusionDate;	
 
 	@ManyToOne
-	 @JoinColumn(name = "CRIADO", 
+	 @JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", 
      referencedColumnName = "id")
 	private Analyst createAnalyst;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "ATUALIZADO", 
+	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", 
     referencedColumnName = "id")
 	private Analyst modifyAnalyst;
 	
-	
 	@ManyToOne
-	@JoinColumn(name = "EXCLUIDO", 
+	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", 
     referencedColumnName = "id")
 	private Analyst exclusionAnalyst;
 	
-//	@ManyToOne
-//	@JoinColumn(name = "ID_EMPRESA", 
-//		    referencedColumnName = "id", nullable = false)
-//	private Company company;
+	@ManyToOne
+	@JoinColumn(name = "EMPRESA_ID", 
+		    referencedColumnName = "id", nullable = false)
+	private Company company;
 	
 }

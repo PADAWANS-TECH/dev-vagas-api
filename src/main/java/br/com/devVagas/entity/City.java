@@ -30,8 +30,8 @@ public class City {
 	@Column(name = "NOME", nullable = false)
 	private String name;
 	
-	//@ManyToOne
-	//@JoinColumn(name = "ID_ESTADO",
-	//referencedColumnName = "id", nullable = false)
-	//private State state;
+	@ManyToOne
+	@JoinColumn(name = "ESTADO_ID",
+	referencedColumnName = "id", nullable = false)
+	private State state;
 }
