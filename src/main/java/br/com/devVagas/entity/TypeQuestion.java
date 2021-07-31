@@ -33,7 +33,7 @@ public class TypeQuestion {
 	@Column(name = "ID")
 	private long id;
 	
-	@Column(name = "TITULO")
+	@Column(name = "TITULO", nullable = false)
 	private String title;
 	
 	@Column(name = "DT_ATUALIZACAO")
