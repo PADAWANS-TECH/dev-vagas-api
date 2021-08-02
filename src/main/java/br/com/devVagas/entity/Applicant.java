@@ -13,14 +13,10 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.JoinColumns;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -106,11 +102,10 @@ public class Applicant {
 	private Analyst exclusionAnalyst;
 	
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "endereco_id",referencedColumnName = "id")
+	@JoinColumn(name = "ENDERECO_ID",referencedColumnName = "id")
 	private List<Address> address = new ArrayList<>();
 	
-	@ManyToMany
-	//falta realizar o mapeamento correto
+	@ManyToMany(mappedBy = "applicanties")
 	private List<Skill> skills = new ArrayList<>();	
 	
 	@ManyToMany(mappedBy = "applicanties",fetch = FetchType.LAZY)
