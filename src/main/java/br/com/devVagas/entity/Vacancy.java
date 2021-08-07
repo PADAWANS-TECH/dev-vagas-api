@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -46,23 +44,19 @@ public class Vacancy {
 	private LocalDateTime exclusionDate;	
 
 	@ManyToOne
-	 @JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", 
-     referencedColumnName = "id")
+	 @JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", referencedColumnName = "id")
 	private Analyst createAnalyst;
 
 	@ManyToOne
-	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", 
-    referencedColumnName = "id")
+	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", referencedColumnName = "id")
 	private Analyst modifyAnalyst;
 	
 	@ManyToOne
-	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", 
-    referencedColumnName = "id")
+	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", referencedColumnName = "id")
 	private Analyst exclusionAnalyst;
 	
 	@ManyToOne
-	@JoinColumn(name = "EMPRESA_ID", 
-		    referencedColumnName = "id", nullable = false)
+	@JoinColumn(name = "EMPRESA_ID", referencedColumnName = "id", nullable = false)
 	private Company company;
 	
 }

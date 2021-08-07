@@ -38,82 +38,78 @@ import lombok.ToString;
 @ToString
 @Table(name = "TB_CANDIDATO")
 public class Applicant {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
 	private Long id;
-	
-	@Column(name ="NOME",nullable = false)
+
+	@Column(name = "NOME", nullable = false)
 	private String name;
-	
-	@Column(name ="TELEFONE",nullable = false)
+
+	@Column(name = "TELEFONE", nullable = false)
 	private String telephone;
-	
-	@Column(name ="DT_NASCIMENTO",nullable = false)
+
+	@Column(name = "DT_NASCIMENTO", nullable = false)
 	private LocalDateTime birthday;
-	
-	@Column(name ="SEXO")
+
+	@Column(name = "SEXO")
 	private String gender;
-	
-	@Column(name ="NACIONALIDADE",nullable = false)
+
+	@Column(name = "NACIONALIDADE", nullable = false)
 	private String nationality;
-	
-	@Column(name ="ESTADO_CIVIL",nullable = false)
+
+	@Column(name = "ESTADO_CIVIL", nullable = false)
 	private String maritalstatus;
-	
-	@Column(name ="RG",nullable = false)
+
+	@Column(name = "RG", nullable = false)
 	private String rg;
-	
-	@Column(name ="CPF",nullable = false)
+
+	@Column(name = "CPF", nullable = false)
 	private String cpf;
-	
-	@Column(name ="IMAGEM")
+
+	@Column(name = "IMAGEM")
 	private Byte image;
-	
-	@Column(name ="TELEFONE_RECADO")
+
+	@Column(name = "TELEFONE_RECADO")
 	private String telephoneMessage;
-	
-	@Column(name ="PONTUACAO")
+
+	@Column(name = "PONTUACAO")
 	private Integer score;
-	
-	@Column(name ="EMAIL",nullable = false)
+
+	@Column(name = "EMAIL", nullable = false)
 	private String email;
-		
+
 	@Column(name = "DT_ATUALIZACAO")
 	private Date updateDate;
-	
+
 	@Column(name = "DT_CRIACAO")
 	private Date createDate;
-	
+
 	@Column(name = "DT_EXCLUSAO")
 	private Date excluysionDate;
-	
+
 	@ManyToOne
-	 @JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", 
-    referencedColumnName = "id")
+	@JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", referencedColumnName = "id")
 	private Analyst createAnalyst;
-	
+
 	@ManyToOne
-	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", 
-   referencedColumnName = "id")
+	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", referencedColumnName = "id")
 	private Analyst modifyAnalyst;
-	
-	
+
 	@ManyToOne
-	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", 
-   referencedColumnName = "id")
+	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", referencedColumnName = "id")
 	private Analyst exclusionAnalyst;
-	
+
 	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name = "endereco_id",referencedColumnName = "id")
+	@JoinColumn(name = "endereco_id", referencedColumnName = "id")
 	private List<Address> address = new ArrayList<>();
-	
+
 	@ManyToMany
-	//falta realizar o mapeamento correto
-	private List<Skill> skills = new ArrayList<>();	
-	
-	@ManyToMany(mappedBy = "applicanties",fetch = FetchType.LAZY)
-	private List<SelectionProcess>selectionProcessies = new ArrayList<>();
-	
+	// falta realizar o mapeamento correto
+	private List<Skill> skills = new ArrayList<>();
+
+	@ManyToMany(mappedBy = "applicanties", fetch = FetchType.LAZY)
+	private List<SelectionProcess> selectionProcessies = new ArrayList<>();
+
 }

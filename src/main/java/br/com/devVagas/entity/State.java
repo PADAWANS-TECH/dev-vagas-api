@@ -25,7 +25,7 @@ public class State {
     @Column(name= "SIGLA", nullable = false)
     private String initials;
 
-    //falta completar o relacionamento
-    //@ManyToOne
-    // private Country country
+    @ManyToOne
+	@JoinColumn(name = "PAIS_ID", referencedColumnName = "id")
+    private Country country;
 }
