@@ -94,7 +94,7 @@ public class SelectionProcess {
     @JoinColumn(name = "applicant_id"))
     private List<Applicant> applicanties = new ArrayList<>();
 	
-	@OneToMany(mappedBy = "selectionProcess",cascade = CascadeType.PERSIST)
+	@OneToMany(cascade = CascadeType.PERSIST)
 	private List<Skill>skills = new ArrayList<>();
 }
 	
