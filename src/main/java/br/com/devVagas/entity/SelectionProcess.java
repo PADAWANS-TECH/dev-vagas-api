@@ -87,8 +87,8 @@ public class SelectionProcess {
     
 	@ManyToMany
     @JoinTable(name = "TB_CANDIDATO_PROCESSO_SELETIVO", joinColumns = 
-    @JoinColumn(name = "selectionProcess_id"), inverseJoinColumns = 
-    @JoinColumn(name = "applicant_id"))
+    @JoinColumn(name = "PROCESSO_SELETIVO_ID"), inverseJoinColumns = 
+    @JoinColumn(name = "CANDIDATO_ID"))
     private List<Applicant> applicanties = new ArrayList<>();
 }
 

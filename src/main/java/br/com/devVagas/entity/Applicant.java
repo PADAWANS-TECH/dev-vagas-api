@@ -106,7 +106,9 @@ public class Applicant {
 	private List<Address> address = new ArrayList<>();
 
 	@ManyToMany
-	// falta realizar o mapeamento correto
+	@JoinTable(name = "TB_CANDIDATO_SKILL", joinColumns = 
+	@JoinColumn(name = "SKILL_ID"), inverseJoinColumns = 
+	@JoinColumn(name = "CANDIDATO_ID"))
 	private List<Skill> skills = new ArrayList<>();
 
 	@ManyToMany(mappedBy = "applicanties", fetch = FetchType.LAZY)

@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -43,6 +44,6 @@ public class Address {
      private String cep;
     
     @ManyToOne
-    //arrumar o mapeamento
+    @JoinColumn(name = "CIDADE_ID", referencedColumnName = "id")
     private City city;
 }
