@@ -4,8 +4,6 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 
 @NoArgsConstructor
@@ -53,19 +51,12 @@ public class Company {
     @Column(name="DT_EXCLUSAO")
     private LocalDateTime exclusionDate;
     
-    @ManyToOne
-	@JoinColumn(name = "CRIADO", referencedColumnName = "id")
-	private Analyst createAnalyst;
-	
-	@ManyToOne
-	@JoinColumn(name = "ATUALIZADO", referencedColumnName = "id")
-	private Analyst modifyAnalyst;
-	
-	@ManyToOne
-	@JoinColumn(name = "EXCLUIDO", referencedColumnName = "id")
-	private Analyst exclusionAnalyst;
+    //falta colocar os relacionamentos para os atributos abaixo
+    // private Analyst createAnalyst
+    // private Analyst modifyAnalyst
+    // private Analyst exclusionAnalyst
 
-	@OneToMany(cascade = CascadeType.PERSIST)
-	@JoinColumn(name = "endereco_id",referencedColumnName = "id")
-	private List<Address> address = new ArrayList<>();
+    //falta completar o mapeamento
+    //@ManyToOne
+    // private Address address
 }

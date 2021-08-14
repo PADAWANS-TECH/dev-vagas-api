@@ -11,7 +11,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
@@ -58,32 +57,20 @@ public class SelectionProcess {
     @Column(name="DT_EXCLUSAO")
     private LocalDateTime exclusionDate;
     
-    @ManyToOne
-	 @JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", 
-   referencedColumnName = "id")
-	private Analyst createAnalyst;
-	
-	@ManyToOne
-	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", 
-  referencedColumnName = "id")
-	private Analyst modifyAnalyst;	
-	
-	@ManyToOne
-	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", 
-  referencedColumnName = "id")
-	private Analyst exclusionAnalyst;
+    //falta adicionar os relacionamentos para os atributos abaixo {
+    // private Analyst createAnalyst
+    // private Analyst exclusionAnalyst
+    // private Analyst updateAnalyst
     
-    @ManyToOne
-    @JoinColumn(name = "EMPRESA_ID")
-    private Company company;
+    //@ManyToOne
+    // private Company company
     
-    @ManyToOne
-    @JoinColumn(name = "CARGO_ID")
-    private Vacancy vacancy;
+    //@ManyToOne
+    // private Vacancy vacancy
     
-    @ManyToOne
-    @JoinColumn(name = "ANALISTA_ID")
-    private Analyst analyst;
+    //@ManyToOne
+    // private Analyst analyst
+//}
     
 	@ManyToMany
     @JoinTable(name = "TB_CANDIDATO_PROCESSO_SELETIVO", joinColumns = 
