@@ -36,11 +36,16 @@ public class Skill {
     @Column(name="DT_EXCLUSAO")
     private LocalDateTime exclusionDate;
     
-    //falta o mapeamento dos relacionamentos abaixo{
-//    @ManyToOne
-//    private Analyst createAnalyst
-//    private Analist exclusionAnalyst
-//    private Analist modifyAnalyst
-//}
+    @ManyToOne
+	@JoinColumn(name = "CRIADO", referencedColumnName = "id")
+	private Analyst createAnalyst;
+
+	@ManyToOne
+	@JoinColumn(name = "ATUALIZADO", referencedColumnName = "id")
+	private Analyst modifyAnalyst;
+
+	@ManyToOne
+	@JoinColumn(name = "EXCLUIDO", referencedColumnName = "id")
+	private Analyst exclusionAnalyst;
     
 }
