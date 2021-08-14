@@ -3,13 +3,16 @@ package br.com.devVagas.serviceImpl;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import br.com.devVagas.dto.AnalystRequestDTO;
 import br.com.devVagas.dto.AnalystResponseDTO;
 import br.com.devVagas.entity.Analyst;
 import br.com.devVagas.repository.AnalystRepository;
 import br.com.devVagas.service.AnalystService;
-
+import lombok.extern.slf4j.Slf4j;
+@Service
+@Slf4j
 public class AnalystServiceImpl implements AnalystService{
 
 	@Autowired
@@ -25,6 +28,7 @@ public class AnalystServiceImpl implements AnalystService{
 			optionalAnalyst.get().setTelephone(request.getTelephone());
 			response = new AnalystResponseDTO(optionalAnalyst.get());
 			analystRepository.save(optionalAnalyst.get());
+			log.info("\t\t\tAnalista salvo com sucesso!!!");
 		return response;
 	}
 
