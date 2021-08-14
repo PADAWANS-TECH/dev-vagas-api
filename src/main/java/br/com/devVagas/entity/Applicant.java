@@ -113,6 +113,7 @@ public class Applicant {
 	@JoinColumn(name = "skills",referencedColumnName = "id")
 	private List<Skill> skills = new ArrayList<>();	
 	
+	
 	@ManyToMany(mappedBy = "applicanties",fetch = FetchType.LAZY)
 	private List<SelectionProcess>selectionProcessies = new ArrayList<>();
 	
