@@ -110,7 +110,7 @@ public class Applicant {
 	private List<Address> address = new ArrayList<>();
 	
 	@ManyToMany
-	//falta realizar o mapeamento correto
+	@JoinColumn(name = "skills",referencedColumnName = "id")
 	private List<Skill> skills = new ArrayList<>();	
 	
 	@ManyToMany(mappedBy = "applicanties",fetch = FetchType.LAZY)
