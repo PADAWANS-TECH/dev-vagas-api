@@ -13,12 +13,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
-public class AnalystRequestDTO {
+public class AnalystResponseDTO {
 
 	private Long id;
 	private String name;
 	private String email;
 	private String telephone;
-	private String password;
 	
 }
