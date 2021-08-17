@@ -32,4 +32,9 @@ public class AnalystServiceImpl implements AnalystService{
 		return response;
 	}
 
+	@Override
+	public Optional<Analyst> find(Long id) {		
+		return  analystRepository.findById(id);
+	}
+
 }
