@@ -20,27 +20,22 @@ import br.com.devVagas.service.AnalystService;
 @RestController
 @RequestMapping("/analyst")
 public class AnalystController {
-	
-	
+
 	@Autowired
 	private AnalystService analystService;
 
 	@PutMapping("/{id}")
-	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody AnalystRequestDTO request){
+	public ResponseEntity<?> update(@PathVariable Long id, @RequestBody AnalystRequestDTO request) {
 		AnalystResponseDTO response = analystService.update(id, request);
-		if(response != null) {
+		if (response != null) {
 			return ResponseEntity.ok(response);
 		}
 		return ResponseEntity.notFound().build();
-	}	
-	
+	}
+
 	@GetMapping("/{id}")
-	public ResponseEntity<?> findAll(@PathVariable Long id){
-		Optional<Analyst>analyst = analystService.find(id);
-		if(analyst.isPresent()) {
+	public ResponseEntity<?> find(@PathVariable Long id) {		
+		AnalystResponseDTO analyst = analystService.find(id);		
 			return ResponseEntity.ok().body(analyst);
-		}else {
-			return new ResponseEntity<>("Path: "+ Analyst.class.getName(),HttpStatus.BAD_REQUEST);
-		}
-}
+	}
 }

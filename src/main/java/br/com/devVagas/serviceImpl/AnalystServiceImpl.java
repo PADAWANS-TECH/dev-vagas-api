@@ -33,8 +33,11 @@ public class AnalystServiceImpl implements AnalystService{
 	}
 
 	@Override
-	public Optional<Analyst> find(Long id) {		
-		return  analystRepository.findById(id);
+	public AnalystResponseDTO find(Long id) {		
+		Optional<Analyst> analyst = analystRepository.findById(id);
+		AnalystResponseDTO response = null;		
+		response = new AnalystResponseDTO(analyst.get());		
+		return response;		
 	}
 
 }

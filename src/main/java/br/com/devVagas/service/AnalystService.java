@@ -10,5 +10,5 @@ public interface AnalystService {
 
 	AnalystResponseDTO update(Long id, AnalystRequestDTO request);
 
-	Optional<Analyst> find(Long id);
+	AnalystResponseDTO find(Long id);
 }
