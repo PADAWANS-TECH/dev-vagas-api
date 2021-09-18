@@ -2,7 +2,11 @@ package br.com.devVagas.serviceImpl;
 
 import java.util.Optional;
 
+import javax.script.Invocable;
+
+import org.aopalliance.intercept.Invocation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import br.com.devVagas.dto.AnalystRequestDTO;
@@ -34,14 +38,8 @@ public class AnalystServiceImpl implements AnalystService {
 	}
 
 	@Override
-	public void delete(Long id) throws Exception {
-		try {
-			analystRepository.deleteById(id);
-		} catch (Exception e) {
-
-			throw new Exception("ID (" + id + "), não encontrado.");
-		}
-
+	public void delete(Long id) {
+		analystRepository.deleteById(id);
 	}
 
 }

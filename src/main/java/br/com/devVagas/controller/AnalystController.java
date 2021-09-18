@@ -34,11 +34,9 @@ public class AnalystController {
 	}
 	
 	@DeleteMapping("/{id}")
-	public ResponseEntity<?> delet(@PathVariable Long id) throws Exception {
-
+	public ResponseEntity<?> delet(@PathVariable Long id) {
 		analystService.delete(id);
-
-		return ResponseEntity.notFound().build();
+		return ResponseEntity.ok().build();
 	}
 	
 }
