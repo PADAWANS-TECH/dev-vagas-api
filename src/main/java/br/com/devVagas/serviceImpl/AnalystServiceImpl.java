@@ -11,9 +11,10 @@ import br.com.devVagas.entity.Analyst;
 import br.com.devVagas.repository.AnalystRepository;
 import br.com.devVagas.service.AnalystService;
 import lombok.extern.slf4j.Slf4j;
+
 @Service
 @Slf4j
-public class AnalystServiceImpl implements AnalystService{
+public class AnalystServiceImpl implements AnalystService {
 
 	@Autowired
 	private AnalystRepository analystRepository;
@@ -22,14 +23,25 @@ public class AnalystServiceImpl implements AnalystService{
 	public AnalystResponseDTO update(Long id, AnalystRequestDTO request) {
 		Optional<Analyst> optionalAnalyst = analystRepository.findById(id);
 		AnalystResponseDTO response = null;
-		if(optionalAnalyst.isPresent())
+		if (optionalAnalyst.isPresent())
 			optionalAnalyst.get().setEmail(request.getEmail());
-			optionalAnalyst.get().setName(request.getName());
-			optionalAnalyst.get().setTelephone(request.getTelephone());
-			response = new AnalystResponseDTO(optionalAnalyst.get());
-			analystRepository.save(optionalAnalyst.get());
-			log.info("\t\t\tAnalista salvo com sucesso!!!");
+		optionalAnalyst.get().setName(request.getName());
+		optionalAnalyst.get().setTelephone(request.getTelephone());
+		response = new AnalystResponseDTO(optionalAnalyst.get());
+		analystRepository.save(optionalAnalyst.get());
+		log.info("\t\t\tAnalista salvo com sucesso!!!");
 		return response;
+	}
+
+	@Override
+	public void delete(Long id) throws Exception {
+		try {
+			analystRepository.deleteById(id);
+		} catch (Exception e) {
+
+			throw new Exception("ID (" + id + "), não encontrado.");
+		}
+
 	}
 
 }
