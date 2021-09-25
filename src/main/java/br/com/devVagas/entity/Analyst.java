@@ -7,18 +7,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import br.com.devVagas.dto.AnalystRequestDTO;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.ToString;
 
+@Builder
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
 @Table(name = "TB_ANALISTA")
+@ToString
 public class Analyst {
+
+	
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,5 +41,11 @@ public class Analyst {
 	@Column(name = "TELEFONE", nullable = false)
 	private String telephone;
 	
+	public Analyst(AnalystRequestDTO request) {
+		this.id = request.getId();
+		this.name = request.getName();
+		this.email = request.getEmail();
+		this.telephone = request.getTelephone();
+	}
 	
 }
