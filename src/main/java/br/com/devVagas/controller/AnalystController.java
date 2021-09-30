@@ -11,13 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.devVagas.dto.AnalystRequestDTO;
 import br.com.devVagas.dto.AnalystResponseDTO;
-import br.com.devVagas.entity.Analyst;
 import br.com.devVagas.service.AnalystService;
-import lombok.extern.log4j.Log4j2;
 
 @RestController
 @RequestMapping("/analyst")
-@Log4j2
 public class AnalystController {
 	
 	
@@ -33,10 +30,9 @@ public class AnalystController {
 		return ResponseEntity.notFound().build();
 	}
 	
-	@DeleteMapping("/{id}")
-	public ResponseEntity<?> delet(@PathVariable Long id) {
-		analystService.delete(id);
+	@DeleteMapping("{id}")
+	public ResponseEntity<?>delet(@PathVariable Long id){
+		analystService.delete(id);		
 		return ResponseEntity.ok().build();
 	}
-	
 }
