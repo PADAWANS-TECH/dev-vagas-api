@@ -81,13 +81,13 @@ public class Applicant {
 	private String email;
 
 	@Column(name = "DT_ATUALIZACAO")
-	private Date updateDate;
+	private LocalDateTime updateDate;
 
 	@Column(name = "DT_CRIACAO")
-	private Date createDate;
+	private LocalDateTime createDate;
 
 	@Column(name = "DT_EXCLUSAO")
-	private Date excluysionDate;
+	private LocalDateTime excluysionDate;
 
 	@ManyToOne
 	@JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", referencedColumnName = "id")
