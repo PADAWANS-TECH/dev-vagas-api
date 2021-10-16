@@ -3,6 +3,9 @@ package br.com.devVagas.entity;
 import lombok.*;
 
 import javax.persistence.*;
+
+import br.com.devVagas.dto.QuizRequestDTO;
+
 import java.time.LocalDateTime;
 
 @Entity
@@ -13,6 +16,7 @@ import java.time.LocalDateTime;
 @Setter
 @ToString(exclude = "id")
 public class Quiz {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "ID")
@@ -53,9 +57,10 @@ public class Quiz {
 	
 	@ManyToOne
 	@JoinColumn(name = "TIPO_QUESTIONARIO_ID", referencedColumnName = "id")
-	private TypeQuiz typequiz;
+	private TypeQuiz typeQuiz;
 
 	@ManyToOne
 	@JoinColumn(name = "ETAPA_ID", referencedColumnName = "id")
 	private Stage stage;
+	
 }
