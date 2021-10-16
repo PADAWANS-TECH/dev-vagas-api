@@ -2,6 +2,7 @@ package br.com.devVagas.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -27,6 +28,11 @@ public class AnalystController {
 			return ResponseEntity.ok(response);
 		}
 		return ResponseEntity.notFound().build();
-	}	
+	}
 	
+	@DeleteMapping("{id}")
+	public ResponseEntity<?>delet(@PathVariable Long id){
+		analystService.delete(id);		
+		return ResponseEntity.ok().build();
+	}
 }

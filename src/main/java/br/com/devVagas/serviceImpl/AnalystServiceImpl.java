@@ -32,4 +32,9 @@ public class AnalystServiceImpl implements AnalystService{
 		return response;
 	}
 
+	@Override
+	public void delete(Long id) {
+		analystRepository.deleteById(id);		
+	}
+
 }

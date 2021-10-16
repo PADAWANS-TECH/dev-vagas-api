@@ -7,4 +7,5 @@ public interface AnalystService {
 
 	AnalystResponseDTO update(Long id, AnalystRequestDTO request);
 
+	void delete(Long id);
 }
