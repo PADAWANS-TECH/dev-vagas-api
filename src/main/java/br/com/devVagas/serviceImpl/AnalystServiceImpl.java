@@ -32,4 +32,14 @@ public class AnalystServiceImpl implements AnalystService{
 		return response;
 	}
 
+	@Override
+	public void delete(Long id) {
+		try {
+			analystRepository.deleteById(id);
+		}catch (Exception e) {
+			e.getMessage();
+		}
+		
+	}
+
 }
