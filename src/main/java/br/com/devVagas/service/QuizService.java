@@ -7,4 +7,6 @@ public interface QuizService {
 
 	QuizResponseDTO createQuiz(QuizRequestDTO quizDTO);
 
+	QuizResponseDTO findQuizById(Long id);
+
 }

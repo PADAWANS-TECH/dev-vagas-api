@@ -49,5 +49,15 @@ public class QuizResponseDTO {
 
 		return quizResponseDTO;
 	}
+
+	public QuizResponseDTO(Quiz quiz) {
+		this.id = quiz.getId();
+		this.title = quiz.getTitle();
+		this.description = quiz.getDescription();
+		this.weight = quiz.getWeight();
+		this.level = quiz.getLevel();
+		this.typeQuiz = quiz.getTypeQuiz();
+		this.stage = quiz.getStage();
+	}
 	
 }
