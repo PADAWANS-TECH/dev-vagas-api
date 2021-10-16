@@ -9,7 +9,7 @@ import br.com.devVagas.dto.QuizRequestDTO;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "TB_PERGUNTA")
+@Table(name = "TB_QUESTIONARIO")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter

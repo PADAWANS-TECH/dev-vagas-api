@@ -1,6 +1,7 @@
 package br.com.devVagas.serviceImpl;
 
 import java.time.LocalDateTime;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -53,6 +54,16 @@ public class QuizServiceImpl implements QuizService {
 		quiz.setTypeQuiz(typeQuiz);
 
 		return quiz;
+	}
+
+	@Override
+	public boolean deleteQuiz(Long id) {
+		Optional<Quiz> optionalQuiz = quizRepository.findById(id);
+		if(optionalQuiz.isPresent()) {
+			quizRepository.delete(optionalQuiz.get());
+			return true;
+		}
+		return false;
 	}
 
 }
