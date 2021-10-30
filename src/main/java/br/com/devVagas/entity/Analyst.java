@@ -33,5 +33,5 @@ public class Analyst {
 	
 	@Column(name = "TELEFONE", nullable = false)
 	private String telephone;
-	
+
 }

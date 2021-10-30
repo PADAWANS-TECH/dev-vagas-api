@@ -37,15 +37,15 @@ public class Skill {
     private LocalDateTime exclusionDate;
     
     @ManyToOne
-	@JoinColumn(name = "CRIADO", referencedColumnName = "id")
+	@JoinColumn(name = "ANALISTA_CRIAÇÃO_ID", referencedColumnName = "id")
 	private Analyst createAnalyst;
 
 	@ManyToOne
-	@JoinColumn(name = "ATUALIZADO", referencedColumnName = "id")
+	@JoinColumn(name = "ANALISTA_MODIFICAÇÃO_ID", referencedColumnName = "id")
 	private Analyst modifyAnalyst;
 
 	@ManyToOne
-	@JoinColumn(name = "EXCLUIDO", referencedColumnName = "id")
+	@JoinColumn(name = "ANALISTA_EXCLUSÃO_ID", referencedColumnName = "id")
 	private Analyst exclusionAnalyst;
     
 }
