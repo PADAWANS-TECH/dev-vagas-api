@@ -37,8 +37,4 @@ public class Analyst {
 	
 	@Column(name = "TELEFONE", nullable = false)
 	private String telephone;
-	
-	@OneToMany
-	@JoinColumn(name = "CARGO_ID", referencedColumnName = "id")
-	private List<Vacancy> vacancies;
 }
